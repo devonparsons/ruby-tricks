@@ -1,7 +1,8 @@
+# Number: 4
 # Title: There Can Be Only One
 # Comment: Use a tricky lock to make your script more exclusive
 # Credit: Ara T. Howard
-# Invocation: `ruby __FILE__`, and in another terminal, `ruby __FILE__`
+# Invocation: natural, but attempt to run in two places at once
 # Transcript:
 
 DATA.flock(File::LOCK_EX | File:: LOCK_NB) or abort "Already running"

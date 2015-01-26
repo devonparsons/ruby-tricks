@@ -1,5 +1,6 @@
-# Title: 
-# Comment: 
+# Number: 1
+# Title: Ruby Can Read Your Email
+# Comment: Or any other text content with Ruby code in it
 # Credit: 
 # Invocation: `ruby -x __FILE__`
 # Transcript:
