@@ -1,6 +1,6 @@
 # ruby-tricks
 
-**ruby-tricks** is an interactive tour through a huge variety of lesser-known ruby functionalities. There is something included for ruby programmers of all skill levels.
+**ruby-tricks** is an interactive tour through a huge variety of lesser-known Ruby functionalities. There is something included for Ruby programmers of all skill levels.
 
 ## Installation
 
