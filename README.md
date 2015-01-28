@@ -4,8 +4,10 @@
 
 ## Installation
 
-ruby-tricks is currently developed on ruby 2.1.5p273
-TODO
+### Ruby Version
+
+- Developed/tested with Ruby 2.1.5p273
+- Should work with Ruby 2.0+
 
 ## Usage
 
