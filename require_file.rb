@@ -1,1 +1,0 @@
-puts "require_file"
