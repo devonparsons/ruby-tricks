@@ -4,12 +4,9 @@
 # Continued:  But that's because I asked for something that doesn't exist, not because I had a
 # Finally:    comment that looked like an attribute to parse but wasn't specified
 
+require_relative 'ruby-util'
 require_relative 'Trick'
 
-this_trick = Trick.new("invoker.rb")
-puts "title: #{this_trick.title}"
-puts "comment: #{this_trick.comment}"
+this_trick = Trick.new("beginner/method_chaining.rb")
+this_trick.describe
 # puts "difficulty: #{this_trick.difficulty}" # crashes
-
-
-

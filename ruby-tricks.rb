@@ -1,3 +1,6 @@
+require 'rubygems'
+require 'bundler/setup'
+
 def welcome
   puts "Welcome to ruby-tricks!"
   puts "At any time, the command 'help' will give you list of available commands. "
