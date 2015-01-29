@@ -1,16 +1,17 @@
-# Comment: As a side effect of everything returning something, methods can be chained quite naturally and indefinitely
+# Comment: As a side effect of everything returning something, 
+# Comment: methods can be chained quite naturally and indefinitely
 
-def four_sorted_capitalized_vowels(str)
+def five_sorted_capitalized_vowels(str)
   puts str.upcase
     .gsub(/[^AEIOU]/,"")
     .chars
     .sort
     .reverse
-    .take(4)
+    .take(5)
     .join
-    .rjust(17, "Four vowels: ")
+    .rjust(18, "Five vowels: ")
 end
 
-four_sorted_capitalized_vowels("The rain in Spain falls mainly on the plains")
-four_sorted_capitalized_vowels("O Romeo, Romeo, wherefore art thou Romeo?")
-four_sorted_capitalized_vowels("Singular vowels ;)")
+five_sorted_capitalized_vowels("The rains in Spain falls mainly on the umbrellas")
+five_sorted_capitalized_vowels("O Romeo, Romeo, wherefore art thou Romeo?")
+five_sorted_capitalized_vowels("Singular vowels")

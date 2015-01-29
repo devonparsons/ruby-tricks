@@ -17,7 +17,8 @@ end
 
 foo = Foo.new
 
-puts foo.methods 
+puts "Methods: #{foo.methods[0..7]}"
+puts "..." 
 foo.first("The first method!")
 foo.second("And the second!")
 foo.third("Finally, the third!")

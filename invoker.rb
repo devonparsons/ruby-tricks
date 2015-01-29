@@ -9,6 +9,7 @@ require_relative 'Trick'
 this_trick = Trick.new("invoker.rb")
 puts "title: #{this_trick.title}"
 puts "comment: #{this_trick.comment}"
-puts "difficulty: #{this_trick.difficulty}"
+# puts "difficulty: #{this_trick.difficulty}" # crashes
+
 
 

@@ -1,4 +1,4 @@
-# Comment: Using the string shorthand for variables invokes the 'to_s' method. Classes without 'to_s' defined return the instance descriptor
+# Comment: Using string interpolation invokes the 'to_s' method. Classes without 'to_s' defined return the instance descriptor
 
 class Foo
   def initialize(name)
