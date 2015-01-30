@@ -4,8 +4,12 @@ Coveralls.wear!
 
 require "test/unit"
 
-class TestRubyTricks < Test::Unit::TestCase
+class RubyTricksTest < Test::Unit::TestCase
+
+  # invoker = Invoker.new(:test)
+
   def test_beginner_method_chaining
+    # response = Invoker.invoke(:beginner, :method_chaining)
     expected = [
       "Five vowels: UOIII",
       "Five vowels: UOOOO",
@@ -33,6 +37,15 @@ class TestRubyTricks < Test::Unit::TestCase
     assert_expected(`ruby beginner/string_interpolation_shortcuts.rb`, expected)
   end
 end
+
+# class InvokerTest < Test::Unit::TestCase
+#   invoker = Invoker.new(:test)
+#   def test_method_one
+#     invoker.InputManager = InputManager.new(["begin","repeat","quit"])
+#     invoker.menu
+#     ...
+#   end
+# end 
 
 def assert_expected(response, expected)
   responses = response.split("\n")
