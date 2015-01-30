@@ -11,7 +11,7 @@ class Foo
 end 
 
 foo = Foo.new
-foo.name = "Foo Fooferson"
+foo.name = "Foo Name"
 foo.introduce
 
 puts "Filename: #$0"
