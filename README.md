@@ -1,4 +1,4 @@
-# ruby-tricks [![Build Status](https://img.shields.io/travis/devonparsons/ruby-tricks.svg)](https://travis-ci.org/devonparsons/ruby-tricks) [![Coverage Status](https://coveralls.io/repos/devonparsons/ruby-tricks/badge.png)](https://coveralls.io/r/devonparsons/ruby-tricks)
+# ruby-tricks [![Build Status](https://img.shields.io/travis/devonparsons/ruby-tricks.svg)](https://travis-ci.org/devonparsons/ruby-tricks) [![Coverage Status](https://coveralls.io/repos/devonparsons/ruby-tricks/badge.svg)](https://coveralls.io/r/devonparsons/ruby-tricks)
 
 **ruby-tricks** is an interactive tour through a huge variety of lesser-known Ruby functionalities. There is something included for Ruby programmers of all skill levels.
 
