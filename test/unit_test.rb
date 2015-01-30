@@ -1,5 +1,7 @@
 # require_relative "../ruby-tricks"
 require "test/unit"
+require 'coveralls'
+Coveralls.wear!
 
 class TestRubyTricks < Test::Unit::TestCase
   def test_simple
