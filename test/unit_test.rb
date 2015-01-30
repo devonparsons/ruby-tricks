@@ -1,7 +1,8 @@
-# require_relative "../ruby-tricks"
-require "test/unit"
+# Coveralls must remain at the very top!
 require 'coveralls'
 Coveralls.wear!
+
+require "test/unit"
 
 class TestRubyTricks < Test::Unit::TestCase
   def test_beginner_method_chaining
