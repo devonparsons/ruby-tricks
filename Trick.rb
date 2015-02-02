@@ -7,11 +7,11 @@ class Trick
   def initialize(filename)
     @filename = filename
     set_defaults
-    parse_attributes
+    parse_file
   end
 
   def run
-    load(@filename,true) if @invocation == "natural\n"
+    load(@filename,true) # if @invocation == "natural\n"
   end
 
   def code
@@ -36,7 +36,7 @@ class Trick
     @path = (File.dirname(__FILE__) + "/#@filename").split("/")[1..-1]
   end
 
-  def parse_attributes
+  def parse_file
     File.readlines(@filename).each do |line|
       # Parse the meta tags at the top into the appropriate attr_accessors. Allows multi-line tags. Doesn't crash on unknown meta tag.
       line =~ /^# (\w+): (.*?)\n$/ && methods.map{|m|m.to_s}.include?($1.downcase) ? method($1.downcase+"=").(method($1.downcase).().to_s + "#$2\n") : @contents << line

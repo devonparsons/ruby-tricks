@@ -34,8 +34,8 @@ class RubyTricksTest < Test::Unit::TestCase
       "In ruby, everything returns a value",
       "puts returns a NilClass: ",
       "sleep returns a Fixnum: 1",
-      # "method declaration returns a Symbol: describe" # ruby 2.1.5?
-      "method declaration returns a NilClass: " # ruby 2.0.0?
+      "method declaration returns a Symbol: describe" # ruby 2.1.5?
+      # "method declaration returns a NilClass: " # ruby 2.0.0?
     ]
     assert_expected(response,expected)
   end
