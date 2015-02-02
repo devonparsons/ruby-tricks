@@ -50,6 +50,12 @@ class RubyTricksTest < Test::Unit::TestCase
     assert_expected(response, expected)
   end
 
+
+  def test_beginner_string_invocation
+    response = get_natural_response("beginner/string_invocation.rb")
+    assert_equal("foo: !@\#$%^&*()_+ foo for thought +_)(*&^%$\#@!", response[0])
+    assert_match(/^bar: #<#<Module:0x[0-9a-f]{14}>::Bar:0x[0-9a-f]{14}>$/, response[1])
+  end
   # def test_menu_navigation
   #   invoker.input = InputManager.new(expected)
   # end
