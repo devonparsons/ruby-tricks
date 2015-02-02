@@ -1,4 +1,5 @@
 # Comment: Variables that start with any non-alphanumeric character do not need braces in string interpolation
+# Invocation: natural
 
 class Foo
   @@foo_size = 4
@@ -13,5 +14,5 @@ end
 foo = Foo.new
 foo.name = "Foo Name"
 foo.introduce
-
-puts "Filename: #$0"
+"latest match" =~ /(.*)/
+puts "Latest regex match: #$~"

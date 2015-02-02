@@ -1,6 +1,6 @@
 class Trick
   attr_accessor :title, :comment, :difficulty, :filename, :invocation
-  attr_reader :contents
+  attr_reader :contents, :path
 
   public
 
@@ -18,6 +18,7 @@ class Trick
     puts "Contents of #@title:"
     puts "\#\# BEGIN \#\#"
     puts @contents
+    puts " \#\# END \#\#"
   end
 
   def describe
@@ -29,17 +30,16 @@ class Trick
   private
 
   def set_defaults
-    @difficulty, @title = @filename.split("/").map{|s|s.capitalize}
+    @difficulty, @title = @filename.split("/").map{|s|s.capitalize.gsub(/_/," ")}
     @comment = ""
     @contents = []
-    path = (File.dirname(__FILE__) + "/#@filename").split("/")[1..-1]
+    @path = (File.dirname(__FILE__) + "/#@filename").split("/")[1..-1]
   end
 
   def parse_attributes
     File.readlines(@filename).each do |line|
       # Parse the meta tags at the top into the appropriate attr_accessors. Allows multi-line tags. Doesn't crash on unknown meta tag.
-      line =~ /^# (\w+): (.*)/ && methods.map{|m|m.to_s}.include?($1.downcase) ? method($1.downcase+"=").(method($1.downcase).().to_s + "#$2\n") : contents << line
+      line =~ /^# (\w+): (.*?)\n$/ && methods.map{|m|m.to_s}.include?($1.downcase) ? method($1.downcase+"=").(method($1.downcase).().to_s + "#$2\n") : @contents << line
     end
-    # TODO trim the newlines off the attributes
   end
 end

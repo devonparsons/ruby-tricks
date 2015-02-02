@@ -4,7 +4,7 @@
 
 def five_sorted_capitalized_vowels(str)
   puts str.upcase
-    .gsub(/[^AEIOU]/,"")        #
+    .gsub(/[^AEIOU]/,"")
     .chars
     .sort
     .reverse
@@ -16,3 +16,4 @@ end
 five_sorted_capitalized_vowels("The rains in Spain fall mainly on the umbrellas")
 five_sorted_capitalized_vowels("O Romeo, Romeo, wherefore art thou Romeo?")
 five_sorted_capitalized_vowels("Singular vowels")
+

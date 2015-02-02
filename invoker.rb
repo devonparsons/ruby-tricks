@@ -2,31 +2,24 @@ require_relative 'Trick'
 require_relative 'ruby-util'
 
 class Invoker
-  attr_accessor :input_manager
+  attr_accessor :input_manager, :current_trick
 
-  def set_trick(difficulty, trick)
-    @current_trick = Trick.new(difficulty, trick)
-  end
-
-  def invoke(file)
+  def invoke
     # Capture stdout
-    $stdout = StringIO.new('','w')
+    $> = StringIO.new('','r+')
     @current_trick.run
+    case $ENV
+    when :run
+      $>.rewind
+      $>.each_line {|l| STDOUT.puts l.chomp}
+    when :test
+      # $>.rewind
+      # $>.each_line {|l| STDOUT.puts l.chomp}
+      $>.rewind
+      $>.readlines.map{|l|l.chomp}
+    end
   ensure
-    $stdout = STDOUT
+    $>.close
+    $> = STDOUT
   end
-
-
 end
-
-this_trick = Trick.new("beginner/method_chaining.rb")
-puts
-this_trick.describe
-puts
-this_trick.run
-puts
-this_trick.code
-puts
-puts "running again"
-this_trick.run
-# puts "difficulty: #{this_trick.difficulty}" # crashes

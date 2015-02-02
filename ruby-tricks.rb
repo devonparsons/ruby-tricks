@@ -12,11 +12,12 @@ def navigate
 end
 
 def main
+  $ENV = :run
   welcome
   navigate
 end
 
-main
+main unless $ENV = :test
 
 # Commands:
 # 'help' list all commands
