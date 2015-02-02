@@ -2,7 +2,21 @@ require_relative 'Trick'
 require_relative 'ruby-util'
 
 class Invoker
-  attr_accessor :input_manager, :current_trick
+  attr_accessor :input_manager, :current_trick, :menu_state
+
+  def initialize
+    @input_manager = InputManager.new
+    @menu_state = :menu
+  end
+
+  def run
+
+  end
+
+  def navigate
+    response = @input_manager.get
+  end
+
 
   def invoke
     # Capture stdout
@@ -13,8 +27,6 @@ class Invoker
       $>.rewind
       $>.each_line {|l| STDOUT.puts l.chomp}
     when :test
-      # $>.rewind
-      # $>.each_line {|l| STDOUT.puts l.chomp}
       $>.rewind
       $>.readlines.map{|l|l.chomp}
     end
