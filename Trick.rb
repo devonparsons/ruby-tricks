@@ -1,5 +1,6 @@
 class Trick
-  attr_reader :title, :difficulty, :filename, :invocation, :contents, :path, :comment
+  attr_accessor :title, :difficulty, :filename, :invocation, :comment
+  attr_reader :contents, :path
 
   public
 
