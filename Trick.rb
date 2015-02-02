@@ -1,6 +1,5 @@
 class Trick
-  attr_accessor :title, :comment, :difficulty, :filename, :invocation
-  attr_reader :contents, :path
+  attr_reader :title, :difficulty, :filename, :invocation, :contents, :path, :comment
 
   public
 
@@ -16,9 +15,7 @@ class Trick
 
   def code
     puts "Contents of #@title:"
-    puts "\#\# BEGIN \#\#"
-    puts @contents
-    puts " \#\# END \#\#"
+    puts "\n#@contents\n"
   end
 
   def describe
@@ -38,7 +35,7 @@ class Trick
 
   def parse_file
     File.readlines(@filename).each do |line|
-      # Parse the meta tags at the top into the appropriate attr_accessors. Allows multi-line tags. Doesn't crash on unknown meta tag.
+      # Parse the meta tags at the top into the appropriate attr_accessors. Allows multi-line tags. Doesn't crash on unknown meta tag. Parse other lines into code contents.
       line =~ /^# (\w+): (.*?)\n$/ && methods.map{|m|m.to_s}.include?($1.downcase) ? method($1.downcase+"=").(method($1.downcase).().to_s + "#$2\n") : @contents << line
     end
   end
