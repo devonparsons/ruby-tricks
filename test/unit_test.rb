@@ -3,12 +3,15 @@ require 'coveralls'
 Coveralls.wear!
 
 require "test/unit"
+require_relative "../Trick"
+
 
 class RubyTricksTest < Test::Unit::TestCase
 
   # invoker = Invoker.new(:test)
 
   def test_beginner_method_chaining
+    trick = Trick.new("beginner/method_chaining")
     # response = Invoker.invoke(:beginner, :method_chaining)
     expected = [
       "Five vowels: UOIII",
