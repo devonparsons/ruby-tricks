@@ -1,5 +1,6 @@
 require_relative 'Trick'
 require_relative 'ruby-util'
+require_relative 'InputManager'
 
 class Invoker
   attr_accessor :input_manager, :current_trick, :menu_state
