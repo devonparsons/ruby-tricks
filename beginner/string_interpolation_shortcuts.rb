@@ -14,5 +14,4 @@ end
 foo = Foo.new
 foo.name = "Foo Name"
 foo.introduce
-"latest match" =~ /(.*)/
-puts "Latest regex match: #$~"
+puts "Default newline operator: #$."

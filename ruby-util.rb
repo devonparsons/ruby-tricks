@@ -7,3 +7,9 @@ class String
     self[0..-1] = self.downcase
   end
 end
+
+
+def list_global_shorthands
+  puts "$*===ARGV: |#{$*===ARGV}|"
+
+end

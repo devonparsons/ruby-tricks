@@ -56,9 +56,18 @@ class RubyTricksTest < Test::Unit::TestCase
     assert_equal("foo: !@\#$%^&*()_+ foo for thought +_)(*&^%$\#@!", response[0])
     assert_match(/^bar: #<#<Module:0x[0-9a-f]{14}>::Bar:0x[0-9a-f]{14}>$/, response[1])
   end
-  # def test_menu_navigation
-  #   invoker.input = InputManager.new(expected)
-  # end
+
+  def test_beginner_method_returning
+    response = get_natural_response("beginner/method_returning.rb")
+    expected = [
+      "2",
+      "3",
+      "4",
+      "LATER",
+      "45"
+    ]
+    assert_expected(response, expected)
+  end
 end
 
 # class InvokerTest < Test::Unit::TestCase

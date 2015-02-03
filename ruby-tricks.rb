@@ -7,14 +7,11 @@ def welcome
   puts "Use 'help' or 'start' to begin the tour:  "
 end
 
-def navigate
-  response = gets.chomp.downcase
-end
-
 def main
   $ENV = :run
   welcome
-  navigate
+  invoker = Invoker.new
+  invoker.run
 end
 
 main unless $ENV = :test
