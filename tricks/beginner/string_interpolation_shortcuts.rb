@@ -1,4 +1,5 @@
 # Comment: Variables that start with any non-alphanumeric character do not need braces in string interpolation
+# Comment: However they must be followed by a space or the end of the string 
 # Invocation: natural
 
 class Foo
@@ -14,4 +15,4 @@ end
 foo = Foo.new
 foo.name = "Foo Name"
 foo.introduce
-puts "Default newline operator: #$."
+puts "Line number of this line: #$."

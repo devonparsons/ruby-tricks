@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'bundler/setup'
+require 'lib/Invoker'
 
 def welcome
   puts "Welcome to ruby-tricks!"
@@ -8,13 +9,19 @@ def welcome
 end
 
 def main
-  $ENV = :run
+  puts Dir.pwd
+  ENV[:mode] = :run
+  ENV[:path] = 
   welcome
   invoker = Invoker.new
   invoker.run
 end
 
-main unless $ENV = :test
+main unless $ENV_MODE = :test
+
+
+
+
 
 # Commands:
 # 'help' list all commands

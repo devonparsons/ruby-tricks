@@ -2,11 +2,14 @@
 require 'coveralls'
 Coveralls.wear!
 
-require "test/unit"
-require_relative "../Trick"
-require_relative "../Invoker"
+puts File.expand_path File.dirname(__FILE__)
 
-$ENV = :test
+
+require "test/unit"
+require_relative "../lib/Trick"
+require_relative "../lib/Invoker"
+
+$ENV_MODE = :test
 
 class RubyTricksTest < Test::Unit::TestCase
 
@@ -45,7 +48,7 @@ class RubyTricksTest < Test::Unit::TestCase
     expected = [
       "My name is Foo Name",
       "Foos are size 4",
-      "Latest regex match: latest match",
+      "Line number of this line: 18",
     ]
     assert_expected(response, expected)
   end

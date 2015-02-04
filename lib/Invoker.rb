@@ -1,5 +1,4 @@
 require_relative 'Trick'
-require_relative 'ruby-util'
 require_relative 'InputManager'
 
 class Invoker
@@ -23,7 +22,7 @@ class Invoker
     # Capture stdout
     $> = StringIO.new('','r+')
     @current_trick.run
-    case $ENV
+    case $ENV_MODE
     when :run
       $>.rewind
       $>.each_line {|l| STDOUT.puts l.chomp}
