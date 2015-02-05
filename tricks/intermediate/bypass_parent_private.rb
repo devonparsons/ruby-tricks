@@ -1,4 +1,4 @@
-# Comment: Child classes can expose their
+# Comment: Child classes can expose their parent's private methods if they are careless
 
 class Parent
   attr_reader :my_variables
@@ -25,22 +25,25 @@ class NaughtyChild < Parent
   end
 end
 
+puts    ("failt");
+
+puts "Nice child:"
 nice = NiceChild.new
-nice.foo rescue "Oops! Can't call foo"
-
 begin
-  nice.dangerous_operation
+  nice.foo
 rescue StandardError => e
   puts "Oops! #{e}"
 end
 
 begin
-  nice.my_variables = ["kill-signal", ["malicious","array"]]
+  nice.dangerous_operation("kill-signal",["malicious","data"])
 rescue StandardError => e
   puts "Oops! #{e}"
 end
+puts "My variables: #{nice.my_variables}"
 
+puts "\nNaughty child:"
 naughty = NaughtyChild.new
 naughty.foo
-naughty.dangerous_operation("kill-signal",["malicious","array"])
-puts naughty.my_variables
+naughty.dangerous_operation("kill-signal",["malicious","data"])
+puts "My variables: #{naughty.my_variables}"
