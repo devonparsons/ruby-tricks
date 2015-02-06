@@ -19,16 +19,18 @@ class Invoker
 
 
   def invoke
+    retval = nil
+    puts "invoking"
     # Capture stdout
     $> = StringIO.new('','r+')
     @current_trick.run
-    case $ENV_MODE
-    when :run
+    case ENV["mode"]
+    when "run"
       $>.rewind
       $>.each_line {|l| STDOUT.puts l.chomp}
-    when :test
+    when "test"
       $>.rewind
-      $>.readlines.map{|l|l.chomp}
+      retval = $>.readlines.map{|l|l.chomp}
     end
   ensure
     $>.close

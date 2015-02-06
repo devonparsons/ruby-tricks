@@ -9,7 +9,7 @@ require "test/unit"
 require_relative "../lib/Trick"
 require_relative "../lib/Invoker"
 
-$ENV_MODE = :test
+# ENV["mode"] ||= "test"
 
 class RubyTricksTest < Test::Unit::TestCase
 
@@ -54,9 +54,9 @@ class RubyTricksTest < Test::Unit::TestCase
   end
 
 
-  def test_beginner_string_invocation
-    response = get_natural_response("beginner/string_invocation.rb")
-    assert_equal("foo: !@\#$%^&*()_+ foo for thought +_)(*&^%$\#@!", response[0])
+  def test_beginner_string_to_s_invocation
+    response = get_natural_response("beginner/string_to_s_invocation.rb")
+    assert_equal("foo: hard_coded to_s foo for thought", response[0])
     assert_match(/^bar: #<#<Module:0x[0-9a-f]{14}>::Bar:0x[0-9a-f]{14}>$/, response[1])
   end
 

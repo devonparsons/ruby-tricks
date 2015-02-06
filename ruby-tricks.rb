@@ -1,6 +1,6 @@
 require 'rubygems'
 require 'bundler/setup'
-require 'lib/Invoker'
+require_relative 'lib/Invoker'
 
 def welcome
   puts "Welcome to ruby-tricks!"
@@ -10,14 +10,16 @@ end
 
 def main
   puts Dir.pwd
-  ENV[:mode] = :run
-  ENV[:path] = 
+  ENV["mode"] = "run"
+  ENV["project_path"] = Dir.pwd.to_s
+  puts ENV["project_path"]
   welcome
   invoker = Invoker.new
   invoker.run
 end
 
-main unless $ENV_MODE = :test
+puts ENV["mode"]
+main unless ENV["mode"] == "test"
 
 
 

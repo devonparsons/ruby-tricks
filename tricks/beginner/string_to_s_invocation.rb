@@ -7,7 +7,7 @@ class Foo
   end
 
   def to_s
-    "!@\#$%^&*()_+ #@name +_)(*&^%$\#@!"
+    "hard_coded to_s #@name"
   end
 end
 

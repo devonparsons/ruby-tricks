@@ -1,11 +1,12 @@
 # Number: 10
 # Title: Inspecting the Source
-# Comment: 
+# Comment: Initializing SCRIPT_LINES__ to an empty hash will fill it with all files 
+# Comment: required from that point forward
 # Credit: Eric Hodel
 # Invocation: natural
 # Transcript:
 
-SCRIPT_LINES__= { }
+SCRIPT_LINES__ = {}
 
 require_relative "snippit"
 puts "Requiring snippit"
