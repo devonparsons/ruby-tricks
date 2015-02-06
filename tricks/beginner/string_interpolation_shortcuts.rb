@@ -15,4 +15,4 @@ end
 foo = Foo.new
 foo.name = "Foo Name"
 foo.introduce
-puts "Line number of this line: #$NR"
+puts "Line number of this line: #$."
