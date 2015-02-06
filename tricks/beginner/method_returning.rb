@@ -2,7 +2,7 @@
 # Invocation: natural
 
 def return_array
-  [2,3,4]
+  [2, 3, 4]
 end
 
 def return_modified_string(string)
@@ -13,9 +13,9 @@ end
 
 def explicitly_return_num(num)
   return num * 15
-  0
+  "Not a number"
 end
 
 puts return_array
 puts return_modified_string "petal"
-puts explicitly_return_num (3)
+puts explicitly_return_num(3)

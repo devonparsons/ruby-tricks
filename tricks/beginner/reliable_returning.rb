@@ -1,4 +1,3 @@
-# Title:
 # Comment: In Ruby, absolutely everything returns something else.
 # Invocation: natural
 

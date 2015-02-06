@@ -4,7 +4,7 @@
 
 def five_sorted_capitalized_vowels(str)
   puts str.upcase
-    .gsub(/[^AEIOU]/,"")
+    .gsub(/[^AEIOU]/, "")
     .chars
     .sort
     .reverse

@@ -1,3 +1,7 @@
+Install rubocop
+
+Learn to use vi mode for ultra hacks
+
 Have a ruby-tricks class that creates an Invoker with default params 
 
 Invoker will handle running the program normally
@@ -6,4 +10,4 @@ It will have an InputManager with normal params
 When testing, in each test:
   create an Invoker with a specific param (a file to invoke)
   give the Invoker an InputManager with the correct user input if necessary
-  
+  testing 
