@@ -2,3 +2,5 @@ StringLiterals:
   Enabled: false
 VariableInterpolation:
   Enabled: false
+Documentation:
+  Enabled: false

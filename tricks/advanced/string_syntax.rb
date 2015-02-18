@@ -8,4 +8,3 @@ puts %^Carets^
 puts %.Periods.
 puts %\You can really just use any symbols for this\
 puts Object.new
-

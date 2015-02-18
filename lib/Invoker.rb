@@ -1,8 +1,9 @@
 require_relative 'Trick'
 require_relative 'InputManager'
+require_relative 'Menu'
 
 class Invoker
-  attr_accessor :input_manager, :current_trick, :menu_state
+  attr_accessor :input_manager, :current_trick
 
   def initialize
     @input_manager = InputManager.new

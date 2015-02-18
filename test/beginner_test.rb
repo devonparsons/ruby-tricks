@@ -2,14 +2,9 @@
 require 'coveralls'
 Coveralls.wear!
 
-puts File.expand_path File.dirname(__FILE__)
-
-
 require "test/unit"
-require_relative "../lib/Trick"
-require_relative "../lib/Invoker"
-
-# ENV["mode"] ||= "test"
+require "#{ENV["project_path"]}/lib/Trick"
+require "#{ENV["project_path"]}/lib/Invoker"
 
 class RubyTricksTest < Test::Unit::TestCase
 

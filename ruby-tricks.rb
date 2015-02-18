@@ -9,28 +9,14 @@ def welcome
 end
 
 def main
-  puts Dir.pwd
   ENV["mode"] = "run"
-  ENV["project_path"] = Dir.pwd.to_s
   puts ENV["project_path"]
   welcome
   invoker = Invoker.new
   invoker.run
 end
 
+ENV["project_path"] = Dir.pwd.to_s
+puts ENV["project_path"]
 puts ENV["mode"]
 main unless ENV["mode"] == "test"
-
-
-
-
-
-# Commands:
-# 'help' list all commands
-# 'beginner' list beginner tricks
-# 'intermediate' list intermediate tricks
-# 'advanced' list advanced tricks
-# 'expert' list expert tricks
-# 'start' begin tour at beginner 1
-# '' move to next logical stage
-# 'run NAME' run 
