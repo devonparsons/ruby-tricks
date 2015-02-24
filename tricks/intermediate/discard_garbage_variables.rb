@@ -9,7 +9,7 @@ class ThirdPartyWorker
   end
 end
 
-# None of my implementations of workers care about the sizes or details attribute that workers usually have
+# None of my implementations of workers care about the `size` or `detail` attribute that workers usually have
 
 class WorkingWorker < ThirdPartyWorker
   def initialize(title, _, _)
@@ -25,7 +25,7 @@ end
 #   end
 # end
 
-# UglyWorker works, but rubocop complains about unused variables
+# UglyWorker works, but rubocop warns about unused variables
 # W: Unused method argument - sizes
 # W: Unused method argument - details
 
@@ -47,9 +47,9 @@ class BlissfullyUnawareWorkerCreator
   def self.create(worker_class)
     worker = worker_class.new("valueable text", [12, 32], name: "foo", location: "Florida")
 
-    p worker.title
-    p worker.sizes
-    p worker.details
+    puts "Title: #{worker.title.inspect}"
+    puts "Sizes: #{worker.sizes.inspect}"
+    puts "Details: #{worker.details.inspect}"
   rescue StandardError => e
     puts "Error! #{e}"
   end
