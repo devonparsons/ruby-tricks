@@ -20,7 +20,6 @@ class Invoker
 
   def invoke
     retval = nil
-    puts "invoking"
     # Capture stdout
     $> = StringIO.new('','r+')
     @current_trick.run
