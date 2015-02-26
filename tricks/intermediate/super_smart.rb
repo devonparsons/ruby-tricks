@@ -1,4 +1,4 @@
-# Comment: The super keyword intelligently passes up params
+# Comment: The super keyword intelligently passes up parameters
 
 class Foo
   def initialize(a = nil, b = nil, c = nil)

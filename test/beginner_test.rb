@@ -3,6 +3,7 @@ require 'coveralls'
 Coveralls.wear!
 
 require "test/unit"
+require "#{ENV["project_path"]}/test/test_helper"
 require "#{ENV["project_path"]}/lib/Trick"
 require "#{ENV["project_path"]}/lib/Invoker"
 
@@ -52,7 +53,7 @@ class RubyTricksTest < Test::Unit::TestCase
   def test_beginner_string_to_s_invocation
     response = get_natural_response("beginner/string_to_s_invocation.rb")
     assert_equal("foo: hard_coded to_s foo for thought", response[0])
-    assert_match(/^bar: #<#<Module:0x[0-9a-f]{14}>::Bar:0x[0-9a-f]{14}>$/, response[1])
+    assert_object_line(response[1], "bar: CLASSNAME", "Bar")
   end
 
   def test_beginner_method_returning
@@ -76,17 +77,3 @@ end
 #     ...
 #   end
 # end 
-
-def get_natural_response (filename)
-  invoker = Invoker.new
-  invoker.current_trick = Trick.new(filename)
-  invoker.invoke
-end
-
-def assert_expected(response, expected)
-  # responses = response.split("\n")
-  expected.each do |line|
-    assert_equal(line, response.shift)
-  end
-  assert_equal([],response)
-end

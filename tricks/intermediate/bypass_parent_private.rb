@@ -42,6 +42,7 @@ rescue StandardError => e
 end
 puts "My variables: #{nice.my_variables}"
 
+
 puts "\nNaughty child:"
 naughty = NaughtyChild.new
 naughty.foo

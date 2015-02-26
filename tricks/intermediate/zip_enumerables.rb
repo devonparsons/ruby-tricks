@@ -15,9 +15,8 @@ data = {
 puts data.keys.map(&:capitalize).join(" ")
 
 # Values
-data.first[1].zip(*data.values[1..-1]) do |layer|
-  layer.zip(data.keys) do |value, header|
-    print value.to_s.rjust(header.length), " "
-  end
-  puts
-end
+puts (data.first[1].zip(*data.values[1..-1]).map do |layer|
+  (layer.zip(data.keys).map do |value, header|
+    value.to_s.rjust(header.length)
+  end).join(" ")
+end).join("\n")
